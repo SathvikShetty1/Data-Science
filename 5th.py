@@ -14,13 +14,13 @@ dataset.isna().sum()
 dataset.duplicated().any()
 
 # Data Visualization
-fig, axs = plt.subplots(3, figsize=(5, 5))
+fig, axs = plt.subplots(4, figsize=(5, 5))
 for i, col in enumerate(['TV', 'Newspaper', 'Radio']):
     sns.boxplot(dataset[col], ax=axs[i])
+    
+sns.distplot(dataset['Sales'])
 plt.tight_layout()
 
-
-sns.distplot(dataset['Sales'])
 plt.show()
 
 sns.pairplot(dataset, x_vars=['TV', 'Radio', 'Newspaper'], y_vars='Sales', height=4, aspect=1, kind='scatter')
