@@ -15,9 +15,8 @@ dataset.duplicated().any()
 
 # Data Visualization
 plt.subplots(3, figsize=(5, 5))
-sns.boxplot(dataset['TV'], ax = axs[0])
-sns.boxplot(dataset['Newspaper'], ax = axs[1])
-sns.boxplot(dataset['Radio'], ax = axs[2])
+for i, col in enumerate(['TV', 'Newspaper', 'Radio']):
+    sns.boxplot(dataset[col], ax=axs[i])
 plt.tight_layout()
 
 sns.distplot(dataset['Sales'])
