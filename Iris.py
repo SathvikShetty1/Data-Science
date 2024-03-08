@@ -40,7 +40,7 @@ print(cm)
 
 # Plot confusion matrix
 plt.figure(figsize=(8, 6))
-sns.heatmap(cm, annot=True, annot_kws={"size": 12}, fmt='d', cmap="Blues")
+sns.heatmap(cm, annot=True, annot_kws={"size": 12, "color": "white"}, fmt='d', cmap="Blues")
 plt.title('Confusion Matrix')
 plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
