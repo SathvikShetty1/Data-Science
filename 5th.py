@@ -14,10 +14,11 @@ dataset.isna().sum()
 dataset.duplicated().any()
 
 # Data Visualization
-plt.subplots(3, figsize=(5, 5))
+fig, axs = plt.subplots(3, figsize=(5, 5))
 for i, col in enumerate(['TV', 'Newspaper', 'Radio']):
     sns.boxplot(dataset[col], ax=axs[i])
 plt.tight_layout()
+
 
 sns.distplot(dataset['Sales'])
 plt.show()
