@@ -8,16 +8,17 @@ from sklearn.linear_model import LinearRegression
 dataset = pd.read_csv('advertising.csv')
 
 # Data Exploration
-dataset.describe()
+dataset.head(10)
+dataset.shape
 dataset.isna().sum()
 dataset.duplicated().any()
 
 # Data Visualization
-fig, axs = plt.subplots(3, figsize=(5, 5))
-for i, col in enumerate(['TV', 'Newspaper', 'Radio']):
-    sns.boxplot(dataset[col], ax=axs[i])
+plt.subplots(3, figsize=(5, 5))
+sns.boxplot(dataset['TV'], ax = axs[0])
+sns.boxplot(dataset['Newspaper'], ax = axs[1])
+sns.boxplot(dataset['Radio'], ax = axs[2])
 plt.tight_layout()
-plt.show()
 
 sns.distplot(dataset['Sales'])
 plt.show()
